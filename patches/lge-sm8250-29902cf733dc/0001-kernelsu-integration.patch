@@ -1,0 +1,27 @@
+diff --git a/drivers/Kconfig b/drivers/Kconfig
+index 1becc393f..811cbfae9 100644
+--- a/drivers/Kconfig
++++ b/drivers/Kconfig
+@@ -237,3 +237,4 @@ source "drivers/energy_model/Kconfig"
+ source "drivers/gud/Kconfig"
+ 
+ endmenu
++source "drivers/kernelsu/Kconfig"
+diff --git a/drivers/Makefile b/drivers/Makefile
+index 38ce8b5a3..a5f26a1b0 100644
+--- a/drivers/Makefile
++++ b/drivers/Makefile
+@@ -198,3 +198,5 @@ ifeq ($(CONFIG_TRUSTONIC_TEE),y)
+ obj-$(CONFIG_TRUSTONIC_TEE) += gud/
+ endif
+ 
++
++obj-$(CONFIG_KSU) += kernelsu/
+diff --git a/drivers/kernelsu b/drivers/kernelsu
+new file mode 120000
+index 000000000..715e11db1
+--- /dev/null
++++ b/drivers/kernelsu
+@@ -0,0 +1 @@
++../ReSukiSU/kernel
+\ No newline at end of file
